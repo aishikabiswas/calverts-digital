@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Agenz Creative Agency Design System - Dark theme with neon green accents */
+
+@layer base {
+  :root {
+    /* Dark Agency Theme */
+    --background: 140 10% 5%;
+    --foreground: 0 0% 98%;
+
+    --card: 140 15% 8%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 140 20% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Orange Primary - The signature Agenz color */
+    --primary: 22 95% 50%;
+    --primary-foreground: 0 0% 98%;
+
+    /* Dark secondary */
+    --secondary: 140 20% 15%;
+    --secondary-foreground: 0 0% 90%;
+
+    --muted: 140 15% 12%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 30 90% 55%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 140 20% 18%;
+    --input: 140 20% 15%;
+    --ring: 22 95% 50%;
+
+    --radius: 0.75rem;
+
+    /* Gradient backgrounds */
+    --gradient-hero: linear-gradient(135deg, hsl(140 15% 4%) 0%, hsl(140 25% 8%) 50%, hsl(140 20% 6%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(140 20% 8%) 0%, hsl(140 15% 12%) 100%);
+    --gradient-orb: radial-gradient(circle, hsl(22 95% 50% / 0.3) 0%, transparent 70%);
+    
+    /* Typography */
+    --font-hero: 'Raleway', system-ui, sans-serif;
+    --font-body: 'Raleway', system-ui, sans-serif;
+    
+    /* Animation timings */
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply text-foreground font-body;
+    /* Removed: background: var(--gradient-hero); and bg-background */
+    /* Removed: min-height: 100vh; */
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-full;
+  }
+
+  /* Typography styles */
+  .hero-text {
+    font-family: var(--font-hero);
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+  }
+
+  .section-title {
+    font-family: var(--font-hero);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  /* Glassmorphism effects */
+  .glass-card {
+    background: hsl(var(--card) / 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border) / 0.3);
+  }
+
+  /* Neon glow effects */
+  .neon-glow {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3),
+                0 0 40px hsl(var(--primary) / 0.2),
+                0 0 80px hsl(var(--primary) / 0.1);
+  }
+
+  .neon-text {
+    text-shadow: 0 0 10px hsl(var(--primary) / 0.5),
+                 0 0 20px hsl(var(--primary) / 0.3),
+                 0 0 40px hsl(var(--primary) / 0.2);
+  }
+}
